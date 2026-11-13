@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dấu Ấn Tri Ân — Ấn Phẩm Điện Tử Chào Mừng 20/11</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond, Playfair Display, Lora & Be Vietnam Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#FDFBF7',
+                        paperWarm: '#F6F1E7',
+                        crimson: '#7C2D12',
+                        moss: '#1E3A2F',
+                        bronze: '#B45309',
+                        ink: '#1C1917',
+                        inkMuted: '#57534E'
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                        editorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        serifBody: ['"Lora"', 'Georgia', 'serif'],
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Nền giấy dó kem ấm áp với họa tiết hạt mịn cổ điển */
+        body {
+            background-color: #FDFBF7;
+            color: #1C1917;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-image:
+                radial-gradient(rgba(180, 83, 9, 0.06) 1px, transparent 0),
+                linear-gradient(to bottom, rgba(246, 241, 231, 0.4), rgba(253, 251, 247, 0.9));
+            background-size: 24px 24px, 100% 100%;
+        }
+
+        /* Nghệ thuật chữ cái đầu tiên phóng to (Drop-cap) chuẩn E-Magazine */
+        .editorial-dropcap::first-letter {
+            float: left;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4.6rem;
+            line-height: 0.82;
+            padding-top: 6px;
+            padding-right: 16px;
+            padding-left: 2px;
+            color: #7C2D12;
+            font-weight: 800;
+        }
+
+        /* Đường kẻ phân cách mang phong cách tạp chí in ấn */
+        .magazine-rule {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(124, 45, 18, 0.35), transparent);
+        }
+
+        /* Hiệu ứng Ken Burns & ánh nắng nhẹ thuần túy thị giác cho Triển lãm ảnh */
+        @keyframes subtleKenBurns {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.06) translate(-1%, -1%); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+        .ken-burns-frame {
+            animation: subtleKenBurns 18s ease-in-out infinite;
+        }
+
+        @keyframes gentleSunbeam {
+            0%, 100% { transform: translateX(-25%) rotate(14deg); opacity: 0.18; }
+            50% { transform: translateX(25%) rotate(18deg); opacity: 0.42; }
+        }
+        .sunbeam-overlay {
+            background: linear-gradient(90deg, transparent, rgba(254, 243, 199, 0.45), transparent);
+            animation: gentleSunbeam 9s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Khung viền kép cổ điển cho thơ thư pháp */
+        .calligraphy-border {
+            box-shadow: inset 0 0 0 1px rgba(180, 83, 9, 0.25), 0 10px 30px -10px rgba(124, 45, 18, 0.08);
+        }
+
+        /* Hiệu ứng chuyển trang mượt mà khi chọn đọc bài */
+        @keyframes pageFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reading-fade-in {
+            animation: pageFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Ẩn thanh cuộn ngang trên các dải tab chọn bài mobile nhưng vẫn cuộn mượt */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Hiệu ứng vẽ con đường nét đứt trên Bản đồ Ký ức */
+        @keyframes dashFlow {
+            to {
+                stroke-dashoffset: -48;
+            }
+        }
+        .map-dashed-path {
+            animation: dashFlow 3.5s linear infinite;
+        }
+
+        /* Hiệu ứng nhịp đập nhẹ cho dấu X cột mốc kỷ niệm */
+        @keyframes markerPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(124, 45, 18, 0.35);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 0 10px rgba(124, 45, 18, 0);
+            }
+        }
+        .x-marker-badge {
+            animation: markerPulse 2.8s ease-in-out infinite;
+        }
+
+        /* Nền họa tiết lưới tọa độ bản đồ cổ điển */
+        .vintage-map-bg {
+            background-color: #F9F4E8;
+            background-image:
+                radial-gradient(circle at 20% 25%, rgba(180, 83, 9, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 80% 75%, rgba(30, 58, 47, 0.07) 0%, transparent 45%),
+                linear-gradient(to right, rgba(180, 83, 9, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(180, 83, 9, 0.07) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+        }
+
+        /* Hiệu ứng banner đồ họa tiêu đề chương E-Magazine chuẩn Báo Khánh Hòa */
+        .emag-chapter-banner {
+            background: linear-gradient(135deg, #FBF8F1 0%, #F4ECE0 100%);
+            border-left: 5px solid #7C2D12;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-200/70 selection:text-crimson">
+
+    <!-- ==================== THANH MỤC LỤC TẠP CHÍ (EDITORIAL MASTHEAD BAR) ==================== -->
+    <nav class="sticky top-0 z-30 bg-paper/95 backdrop-blur-md border-b border-crimson/15">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 h-14 flex items-center justify-between text-xs sm:text-sm">
+            <a href="#trang-bia" class="font-display font-bold tracking-wider text-crimson uppercase">
+                Dấu Ấn Tri Ân <span class="text-bronze font-normal hidden sm:inline">• Số 20/11</span>
+            </a>
+            <div class="flex items-center gap-4 sm:gap-8 text-inkMuted font-medium">
+                <a href="#lich-su" class="hover:text-crimson transition">I. Lịch Sử</a>
+                <a href="#e-magazine" class="hover:text-crimson transition">II. E-Magazine</a>
+                <a href="#trien-lam" class="hover:text-crimson transition">III. Bản Đồ Ký Ức</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== TRANG BÌA TẠP CHÍ & LỜI NGỎ ==================== -->
+    <header id="trang-bia" class="pt-10 pb-16 sm:pt-16 sm:pb-24 px-4 sm:px-8 border-b border-crimson/15">
+        <div class="max-w-5xl mx-auto">
+            <!-- Dòng thông tin xuất bản phía trên bìa báo -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pb-4 mb-10 sm:mb-12 border-b-2 border-crimson text-[11px] sm:text-xs uppercase tracking-[0.2em] text-inkMuted font-medium text-center">
+                <span>Ấn Phẩm Truyền Thông Số • Chi Đoàn 11H</span>
+                <span class="text-bronze font-semibold">Số Đặc Biệt Chào Mừng Ngày Nhà Giáo Việt Nam 20/11</span>
+                <span>Tháng 11 / 2026</span>
+            </div>
+
+            <!-- Tiêu đề lớn trang bìa (Đã tinh chỉnh khoảng cách & line-height để dấu tiếng Việt không bao giờ đè chữ) -->
+            <div class="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+                <p class="font-editorial italic text-lg sm:text-2xl text-moss leading-relaxed mb-5 sm:mb-7 px-2">
+                    "Một đời người – một dòng sông... Mấy ai làm kẻ đứng trông bến bờ"
+                </p>
+                <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold text-crimson tracking-normal leading-[1.24] pt-2 pb-3 mb-5">
+                    DẤU ẤN TRI ÂN
+                </h1>
+                <div class="flex items-center justify-center gap-3 sm:gap-4 mb-6">
+                    <span class="h-px w-10 sm:w-20 bg-bronze/50"></span>
+                    <span class="text-[11px] sm:text-sm uppercase tracking-[0.22em] sm:tracking-[0.28em] text-bronze font-semibold">
+                        Tôn Sư Trọng Đạo • Nghĩa Tình Mái Trường
+                    </span>
+                    <span class="h-px w-10 sm:w-20 bg-bronze/50"></span>
+                </div>
+                <p class="max-w-2xl mx-auto text-sm sm:text-base text-inkMuted leading-relaxed">
+                    Không gian báo tường điện tử lưu giữ dòng chảy lịch sử vẻ vang của nghề giáo, những trang tản văn lắng đọng và bản đồ ký ức thanh xuân tươi đẹp dưới mái trường mến yêu.
+                </p>
+            </div>
+
+            <!-- Hộp Lời Ngỏ Trang Trọng Mở Đầu Trang Báo -->
+            <div class="max-w-3xl mx-auto bg-paperWarm/90 border border-bronze/25 rounded-2xl p-6 sm:p-10 shadow-sm relative">
+                <!-- Hoa văn góc trang trí -->
+                <div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-crimson/40"></div>
+                <div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-crimson/40"></div>
+                <div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-crimson/40"></div>
+                <div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-crimson/40"></div>
+
+                <div class="text-center mb-6">
+                    <span class="text-[11px] uppercase tracking-[0.25em] text-bronze font-semibold block mb-1.5">
+                        Lời Ngỏ Mở Đầu Ấn Phẩm
+                    </span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-crimson">
+                        Chuyến Đò Thầm Lặng
+                    </h2>
+                </div>
+
+                <div class="space-y-4 font-editorial text-lg sm:text-xl text-ink leading-relaxed italic text-justify">
+                    <p>
+                        Tháng Mười Một lại về mang theo những cơn gió se lạnh đầu đông, gợi nhắc trong lòng mỗi thế hệ học trò về một mùa tri ân sâu lắng – mùa tôn vinh những người lái đò thầm lặng.
+                    </p>
+                    <p>
+                        Giữa dòng đời xuôi ngược, có những người thầy, người cô vẫn miệt mài gieo hạt mầm tri thức, chắp cánh cho bao ước mơ bay cao, bay xa. Khoảng thời gian ngồi trên ghế nhà trường rồi sẽ qua đi, nhưng ánh mắt khích lệ, tấm lòng tận tụy và những bài học làm người của thầy cô sẽ mãi là hành trang quý giá theo chúng ta suốt cuộc đời.
+                    </p>
+                    <p class="not-italic font-sans text-sm sm:text-base text-crimson font-medium pt-2 text-center">
+                        Ấn phẩm E-Magazine hôm nay là món quà tinh thần trang trọng, là tất cả tình cảm chân thành và lòng biết ơn vô hạn mà tập thể Chi đoàn 11H kính dâng lên quý thầy cô nhân ngày 20/11.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== PHÂN KHU 1: LỊCH SỬ TRUYỀN THỐNG ==================== -->
+    <section id="lich-su" class="py-16 sm:py-24 px-4 sm:px-8 max-w-5xl mx-auto">
+        <!-- Tiêu đề phân khu -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-xs uppercase tracking-[0.25em] text-moss font-bold block mb-2">
+                Phân Khu I • Lịch Sử Truyền Thống
+            </span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold text-crimson mb-4">
+                Ngọn Lửa Tri Ân – Hành Trình Tự Hào
+            </h2>
+            <p class="text-sm sm:text-base text-inkMuted leading-relaxed">
+                Ngược dòng thời gian tìm về những mốc son lịch sử thiêng liêng đã khai sinh nên Ngày Nhà giáo Việt Nam 20/11 – biểu tượng sáng ngời của truyền thống hiếu học dân tộc.
+            </p>
+        </div>
+
+        <!-- Sơ đồ dòng thời gian (Timeline) kết hợp thẻ Infographic 4 cột mốc -->
+        <div class="relative max-w-4xl mx-auto mb-16">
+            <!-- Trục dọc trung tâm -->
+            <div class="hidden md:block absolute left-1/2 top-2 bottom-2 w-px bg-crimson/25 transform -translate-x-1/2"></div>
+
+            <div class="space-y-8 md:space-y-12">
+                <!-- Mốc 1: 1946 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
+                    <div class="md:text-right bg-white p-6 rounded-2xl border border-bronze/20 shadow-sm">
+                        <span class="inline-block px-3 py-1 rounded bg-moss text-amber-50 font-display font-bold text-sm mb-2">
+                            Năm 1946
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-ink mb-2">
+                            Tổ Chức Quốc Tế Các Nhà Giáo (F.I.S.E)
+                        </h3>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            Tại thủ đô Paris (nước Pháp), tổ chức quốc tế của các nhà giáo tiến bộ được thành lập với tên gọi <strong>F.I.S.E</strong>, mở đầu phong trào đoàn kết bảo vệ quyền lợi và đề cao sứ mệnh cao quý của nghề dạy học trên toàn thế giới.
+                        </p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-start">
+                        <div class="w-4 h-4 rounded-full bg-crimson border-4 border-paper shadow -ml-[56px]"></div>
+                        <span class="ml-6 font-editorial italic text-lg text-bronze">Khởi nguồn từ Paris, Pháp</span>
+                    </div>
+                </div>
+
+                <!-- Mốc 2: Tháng 8/1957 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
+                    <div class="hidden md:flex items-center justify-end">
+                        <span class="mr-6 font-editorial italic text-lg text-bronze">Hội nghị lịch sử tại Ba Lan</span>
+                        <div class="w-4 h-4 rounded-full bg-bronze border-4 border-paper shadow -mr-[56px] z-10"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-bronze/20 shadow-sm">
+                        <span class="inline-block px-3 py-1 rounded bg-bronze text-white font-display font-bold text-sm mb-2">
+                            Tháng 8 / 1957
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-ink mb-2">
+                            Thông Qua Bản Hiến Chương Các Nhà Giáo
+                        </h3>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            Hội nghị Quốc tế các nhà giáo họp tại thủ đô Warsaw (Ba Lan) với sự tham dự của 57 quốc gia (có đoàn Công đoàn Giáo dục Việt Nam) đã nhất trí thông qua bản <strong>"Hiến chương các nhà giáo"</strong> và chọn ngày 20/11 làm ngày kỷ niệm chung.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mốc 3: 20/11/1958 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
+                    <div class="md:text-right bg-white p-6 rounded-2xl border border-bronze/20 shadow-sm">
+                        <span class="inline-block px-3 py-1 rounded bg-moss text-amber-50 font-display font-bold text-sm mb-2">
+                            Ngày 20/11/1958
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-ink mb-2">
+                            Lần Đầu Tổ Chức Tại Miền Bắc Việt Nam
+                        </h3>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            Ngày Quốc tế Hiến chương các nhà giáo lần đầu tiên được tổ chức trang trọng trên toàn miền Bắc nước ta, sau đó lan tỏa mạnh mẽ tới các vùng giải phóng miền Nam, trở thành ngày hội tri ân thầy cô giữa những năm tháng gian khó.
+                        </p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-start">
+                        <div class="w-4 h-4 rounded-full bg-moss border-4 border-paper shadow -ml-[56px]"></div>
+                        <span class="ml-6 font-editorial italic text-lg text-bronze">Dấu ấn giáo dục Việt Nam</span>
+                    </div>
+                </div>
+
+                <!-- Mốc 4: 28/09/1982 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
+                    <div class="hidden md:flex items-center justify-end">
+                        <span class="mr-6 font-editorial italic text-lg text-crimson font-semibold">Quyết định số 167-HĐBT</span>
+                        <div class="w-5 h-5 rounded-full bg-crimson border-4 border-amber-200 shadow -mr-[58px] z-10"></div>
+                    </div>
+                    <div class="bg-paperWarm p-6 rounded-2xl border-2 border-crimson/30 shadow-sm">
+                        <span class="inline-block px-3 py-1 rounded bg-crimson text-amber-50 font-display font-bold text-sm mb-2">
+                            Ngày 28/09/1982
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-crimson mb-2">
+                            Chính Thức Lấy 20/11 Là Ngày Nhà Giáo Việt Nam
+                        </h3>
+                        <p class="text-sm text-ink leading-relaxed">
+                            Hội đồng Bộ trưởng (nay là Chính phủ) ban hành <strong>Quyết định số 167-HĐBT</strong>, chính thức lấy ngày <strong>20 tháng 11 hằng năm</strong> là <strong>Ngày Nhà giáo Việt Nam</strong> – ngày lễ trọng đại của toàn dân tôn vinh sự học và người thầy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hộp trích dẫn ý nghĩa cốt lõi truyền thống "Tôn sư trọng đạo" -->
+        <div class="bg-moss text-amber-50 rounded-3xl p-8 sm:p-12 shadow-md relative overflow-hidden">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs uppercase tracking-[0.28em] text-amber-300/90 font-semibold block mb-3">
+                    Giá Trị Cốt Lõi Ngàn Đời
+                </span>
+                <h3 class="font-display text-2xl sm:text-4xl font-bold text-white mb-5">
+                    "Tôn Sư Trọng Đạo – Uống Nước Nhớ Nguồn"
+                </h3>
+                <p class="font-editorial text-lg sm:text-2xl italic text-amber-100/90 leading-relaxed mb-6">
+                    “Muốn sang thì bắc cầu Kiều, muốn con hay chữ thì yêu lấy thầy.”
+                </p>
+                <div class="magazine-rule mb-6 opacity-40"></div>
+                <p class="text-sm sm:text-base text-amber-50/85 leading-relaxed">
+                    Ngày Nhà giáo Việt Nam 20/11 không chỉ là dịp để các thế hệ học trò bày tỏ lòng biết ơn sâu sắc tới những người thầy, người cô đã tận tâm dìu dắt mình nên người, mà còn là lời nhắc nhở về trách nhiệm gìn giữ, phát huy truyền thống hiếu học và đạo lý nhân văn cao đẹp của dân tộc Việt Nam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PHÂN KHU 2: E-MAGAZINE CHUẨN BÁO CHÍ LONGFORM ==================== -->
+    <section id="e-magazine" class="bg-paper border-y border-crimson/15">
+        <!-- 1. FULL-BLEED EDITORIAL COVER (BÌA E-MAGAZINE TOÀN KHUNG KIỂU BÁO KHÁNH HÒA) -->
+        <div class="relative w-full overflow-hidden bg-moss text-amber-50">
+            <!-- Nền họa tiết đồ họa nghệ thuật tràn khung -->
+            <div class="absolute inset-0 pointer-events-none">
+                <svg class="w-full h-full object-cover opacity-35" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="emagSunGlow" cx="75%" cy="28%" r="55%">
+                            <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.75"/>
+                            <stop offset="50%" stop-color="#B45309" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#1E3A2F" stop-opacity="0"/>
+                        </radialGradient>
+                        <linearGradient id="emagSlateGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#132A21"/>
+                            <stop offset="100%" stop-color="#291D18"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="1440" height="720" fill="url(#emagSlateGrad)"/>
+                    <rect width="1440" height="720" fill="url(#emagSunGlow)"/>
+                    <!-- Đường nét trang sách & ánh sáng tri thức -->
+                    <path d="M-100 560 Q 360 440, 720 540 T 1540 480" fill="none" stroke="#FCD34D" stroke-width="2" opacity="0.35"/>
+                    <path d="M-100 600 Q 380 480, 740 580 T 1540 520" fill="none" stroke="#FEF3C7" stroke-width="1.5" opacity="0.25"/>
+                    <circle cx="1120" cy="210" r="190" fill="none" stroke="#FDE68A" stroke-width="1" stroke-dasharray="6 8" opacity="0.35"/>
+                    <circle cx="1120" cy="210" r="250" fill="none" stroke="#FDE68A" stroke-width="1" opacity="0.2"/>
+                </svg>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#13261E] via-[#13261E]/75 to-[#13261E]/40"></div>
+            </div>
+
+            <!-- Nội dung Cover E-Magazine -->
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-16 pb-16 sm:pt-24 sm:pb-24 text-center">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-300/40 text-amber-200 text-[11px] sm:text-xs font-bold uppercase tracking-[0.26em] mb-6">
+                    <span>Phân Khu II</span>
+                    <span>•</span>
+                    <span>E-Magazine Chuyên Đề 20/11</span>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-normal leading-[1.2] max-w-4xl mx-auto mb-6 drop-shadow-sm">
+                    TRỌN TÌNH YÊU DÀNH CHO THẦY CÔ &amp; MÁI TRƯỜNG
+                </h2>
+
+                <div class="flex items-center justify-center gap-3 mb-8">
+                    <span class="h-px w-12 bg-amber-300/60"></span>
+                    <span class="font-editorial italic text-xl sm:text-2xl text-amber-200">
+                        Chuyến Đò Thầm Lặng Giữa Mùa Tri Ân
+                    </span>
+                    <span class="h-px w-12 bg-amber-300/60"></span>
+                </div>
+
+                <!-- SAPO DẪN NHẬP CỠ LỚN ĐẶC TRƯNG E-MAGAZINE BÁO KHÁNH HÒA -->
+                <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md border border-amber-200/25 rounded-2xl p-6 sm:p-8 text-left sm:text-center shadow-lg">
+                    <p class="font-serifBody font-semibold text-base sm:text-xl text-amber-50 leading-[1.85]">
+                        Có những hành trình không đo bằng dặm dài địa lý, mà được đong đếm bằng từng nét phấn trắng, từng ánh đèn khuya bên trang giáo án và những mùa hoa tri thức lặng lẽ nở hoa. Nhân kỷ niệm Ngày Nhà giáo Việt Nam 20/11, mời bạn cùng lật mở từng trang phóng sự – tản văn Longform để lắng nghe nhịp đập yêu thương từ bục giảng thân yêu.
+                    </p>
+                </div>
+
+                <!-- Dòng thông tin tác giả / Chi đoàn thực hiện -->
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-amber-200/85 font-medium">
+                    <span>Thực hiện: <strong class="text-white">Ban Biên Tập Chi Đoàn 11H</strong></span>
+                    <span class="hidden sm:inline">•</span>
+                    <span>Thể loại: <strong class="text-white">Longform E-Magazine Đa Phương Tiện</strong></span>
+                    <span class="hidden sm:inline">•</span>
+                    <span>Ấn phẩm đặc biệt 20/11/2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. THANH ĐIỀU HƯỚNG CHUYÊN MỤC E-MAGAZINE (CHỌN BÀI LONGFORM & GÓC THƠ) -->
+        <div class="sticky top-14 z-20 bg-paperWarm/95 backdrop-blur-md border-b border-crimson/15 shadow-sm">
+            <div class="max-w-5xl mx-auto px-4 sm:px-8 py-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                    <div class="flex items-center gap-2 shrink-0">
+                        <span class="w-2 h-2 rounded-full bg-crimson"></span>
+                        <span class="text-[11px] uppercase tracking-[0.2em] text-crimson font-bold">
+                            Chuyên Mục Longform:
+                        </span>
+                    </div>
+
+                    <!-- Dải nút chọn 4 kỳ E-Magazine Longform -->
+                    <div id="essay-selector" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5" role="tablist" aria-label="Danh sách bài E-Magazine Longform">
+                        <!-- Các nút chọn kỳ bài viết được render qua JavaScript -->
+                    </div>
+
+                    <span id="essay-counter" class="hidden lg:inline-block text-xs font-semibold text-bronze shrink-0">
+                        Kỳ 01 / 04
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. KHÔNG GIAN ĐỌC LONGFORM SCROLLYTELLING CHUẨN BÁO KHÁNH HÒA -->
+        <div id="khu-tan-van" class="py-14 sm:py-20 px-4 sm:px-8">
+            <article id="essay-reader" class="transition-all">
+                <!-- Nội dung bài viết Longform (Cột chữ 760px + Sub-heading đồ họa + Ảnh rộng 1040px + Pull-quote) được render mượt mà tại đây -->
+            </article>
+        </div>
+
+        <!-- 4. CHUYÊN MỤC CON SỐ BIẾT NÓI & PHỎNG VẤN NHANH THẦY CÔ -->
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 pb-16">
+            <!-- Dải Infographic Con Số Tri Ân -->
+            <div class="bg-moss text-amber-50 rounded-3xl p-6 sm:p-10 mb-14 shadow-md border border-amber-300/20">
+                <div class="text-center mb-8">
+                    <span class="text-[11px] uppercase tracking-[0.25em] text-amber-300 font-bold block mb-1.5">
+                        Infographic • Những Con Số Biết Nói
+                    </span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                        Dấu Ấn Một Hành Trình Gieo Hạt
+                    </h3>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="bg-white/10 rounded-2xl p-5 text-center border border-white/10">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-amber-300 block mb-1">1.000+</span>
+                        <span class="text-xs sm:text-sm text-amber-100/90 leading-snug block">Giờ lên lớp miệt mài truyền lửa tri thức</span>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-5 text-center border border-white/10">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-amber-300 block mb-1">45</span>
+                        <span class="text-xs sm:text-sm text-amber-100/90 leading-snug block">Ước mơ tuổi trẻ được thầy cô nâng bước</span>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-5 text-center border border-white/10">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-amber-300 block mb-1">365</span>
+                        <span class="text-xs sm:text-sm text-amber-100/90 leading-snug block">Ngày tận tâm lặng lẽ phía sau bục giảng</span>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-5 text-center border border-white/10">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-amber-300 block mb-1">∞</span>
+                        <span class="text-xs sm:text-sm text-amber-100/90 leading-snug block">Tình cảm tri ân khắc ghi trong tim học trò</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. TUYỂN TẬP THƠ TRI ÂN NGHỆ THUẬT (CHỌN ĐỌC 5 TÁC PHẨM) -->
+            <div id="khu-tho" class="mb-16">
+                <div class="text-center mb-6">
+                    <span class="text-xs uppercase tracking-[0.25em] text-bronze font-bold block mb-1.5">
+                        Phụ Bản Thi Ca • Sáng Tác Học Trò
+                    </span>
+                    <h3 class="font-display text-2xl sm:text-4xl font-bold text-crimson">
+                        Tuyển Tập Vần Thơ Dâng Thầy Cô
+                    </h3>
+                </div>
+
+                <!-- Thanh Chọn 5 Bài Thơ -->
+                <div id="poem-selector" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8" role="tablist" aria-label="Danh sách bài thơ">
+                    <!-- Các nút chọn bài thơ được render qua JavaScript -->
+                </div>
+
+                <!-- Khung Giấy Thư Pháp Hiển Thị Bài Thơ Đang Chọn -->
+                <div class="max-w-3xl mx-auto">
+                    <div id="poem-reader" class="bg-paperWarm/70 rounded-3xl p-8 sm:p-12 calligraphy-border border border-bronze/30 text-center relative overflow-hidden">
+                        <!-- Nội dung bài thơ sẽ được render mượt mà tại đây -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. CHUYÊN MỤC PHỎNG VẤN NGẮN 1 PHÚT CÙNG THẦY CÔ -->
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-moss/20 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-6 border-b border-moss/15">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.2em] text-moss font-bold">
+                            Chuyên Mục Đối Thoại • Q&amp;A
+                        </span>
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold text-ink mt-1">
+                            Phỏng Vấn Nhanh 1 Phút Cùng Thầy Cô
+                        </h3>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-inkMuted font-medium">
+                        Ghi chép từ bục giảng
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Câu hỏi 1 -->
+                    <div class="space-y-3">
+                        <p class="font-display font-bold text-base sm:text-lg text-crimson leading-snug">
+                            01. “Khoảnh khắc nào của học trò khiến thầy/cô xúc động và nhớ mãi nhất ạ?”
+                        </p>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            <strong class="text-moss font-semibold">Thầy/Cô chia sẻ:</strong> “Niềm hạnh phúc lớn nhất của người đứng lớp không nằm ở những bó hoa rực rỡ, mà là khoảnh khắc nhìn thấy những cô cậu học trò tinh nghịch ngày nào nay đã trưởng thành, sống tử tế và quay trở về trường với ánh mắt rạng ngời.”
+                        </p>
+                    </div>
+
+                    <!-- Câu hỏi 2 -->
+                    <div class="space-y-3">
+                        <p class="font-display font-bold text-base sm:text-lg text-crimson leading-snug">
+                            02. “Điều gì giúp thầy/cô giữ trọn ngọn lửa nhiệt huyết sau bao năm đứng bục giảng?”
+                        </p>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            <strong class="text-moss font-semibold">Thầy/Cô chia sẻ:</strong> “Chính là ánh mắt chăm chú lắng nghe của các em mỗi giờ lên lớp. Mỗi thế hệ học trò mang đến một nguồn năng lượng tươi mới, khiến thầy cô luôn thấy thanh xuân của mình còn mãi dưới mái trường.”
+                        </p>
+                    </div>
+
+                    <!-- Câu hỏi 3 -->
+                    <div class="space-y-3">
+                        <p class="font-display font-bold text-base sm:text-lg text-crimson leading-snug">
+                            03. “Thầy/cô muốn gửi gắm điều gì tới chúng em trong mùa tri ân 20/11 năm nay?”
+                        </p>
+                        <p class="text-sm text-inkMuted leading-relaxed">
+                            <strong class="text-moss font-semibold">Thầy/Cô chia sẻ:</strong> “Hãy luôn giữ trái tim nhân hậu, biết trân trọng từng phút giây tuổi học trò và dũng cảm theo đuổi ước mơ bằng chính tri thức, nỗ lực chân chính của bản thân mình.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PHÂN KHU 3: BẢN ĐỒ KÝ ỨC "THANH XUÂN CÓ THẦY CÔ" ==================== -->
+    <section id="trien-lam" class="py-16 sm:py-24 px-4 sm:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs uppercase tracking-[0.25em] text-bronze font-bold block mb-2">
+                Phân Khu III • Bản Đồ Ký Ức Tương Tác
+            </span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold text-crimson leading-[1.2] mb-4">
+                Thanh Xuân Có Thầy Cô
+            </h2>
+            <p class="text-sm sm:text-base text-inkMuted leading-relaxed">
+                Chọn một hành trình kỷ niệm bên dưới để mở ra tấm bản đồ nét đứt dẫn lối qua từng dấu <strong class="text-crimson font-bold">✕</strong> lưu giữ những khoảnh khắc vàng dưới mái trường.
+            </p>
+        </div>
+
+        <!-- Thanh Chọn 4 Chủ Đề Bản Đồ Ký Ức -->
+        <div id="map-topic-selector" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8" role="tablist" aria-label="Chủ đề triển lãm ảnh">
+            <!-- Các nút chủ đề được render qua JavaScript -->
+        </div>
+
+        <!-- Khung Bản Đồ Hành Trình Ký Ức (Tương thích cả Mobile & Desktop) -->
+        <div id="memory-map-viewport" class="vintage-map-bg rounded-3xl border-2 border-bronze/30 shadow-md p-5 sm:p-10 relative overflow-hidden">
+            <!-- Nội dung bản đồ đường nét đứt và các dấu X ảnh kỷ niệm sẽ được render tại đây -->
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER TRANG TRỌNG & CHUẨN MỰC SƯ PHẠM ==================== -->
+    <footer class="bg-crimson text-amber-50 py-14 sm:py-16 px-4 sm:px-8 border-t-4 border-bronze">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-xs uppercase tracking-[0.28em] text-amber-300 font-semibold block mb-3">
+                Lời Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-white mb-4">
+                Kính Chúc Quý Thầy Cô Luôn Mạnh Khỏe, Hạnh Phúc Và Vững Tay Chèo
+            </h2>
+            <p class="font-editorial italic text-lg sm:text-xl text-amber-100/90 max-w-2xl mx-auto leading-relaxed mb-8">
+                “Dẫu mai này tung cánh muôn phương, chúng em vẫn mãi tự hào là học trò của thầy cô, của mái trường thân yêu này.”
+            </p>
+
+            <div class="h-px w-full bg-amber-200/20 mb-8"></div>
+
+            <div class="space-y-2 text-xs text-amber-100/75 leading-relaxed">
+                <p class="font-semibold text-amber-200 uppercase tracking-wider">
+                    Sản Phẩm Dự Thi Không Gian Truyền Thông Số “Dấu Ấn Tri Ân” • Chi Đoàn 11H
+                </p>
+                <p>
+                    Ấn phẩm tuân thủ nghiêm túc quy định về Văn hóa số và Chuẩn mực sư phạm: Nội dung cảm xúc chân thật, hình ảnh trang trọng thẩm mỹ, ngôn từ trong sáng và tôn trọng bản quyền sở hữu trí tuệ.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPT ĐIỀU KHIỂN CHỌN BÀI ĐỌC TẢN VĂN & THƠ ==================== -->
+    <script>
+        // Kho dữ liệu 4 kỳ E-Magazine Longform Scrollytelling chuẩn Báo Khánh Hòa
+        const ESSAYS_DATA = [
+            {
+                id: 0,
+                number: "Kỳ 01",
+                shortTab: "Bục Phấn, Ngày Xưa Và Em",
+                category: "Phóng Sự Ký Ức • Bục Giảng Thân Yêu",
+                title: "Bục Phấn, Ngày Xưa Và Em",
+                sapo: "Có những buổi sáng đến lớp khi sương mai còn đọng trên vòm lá, hình ảnh quen thuộc đầu tiên vẫn là bóng dáng thầy cô lặng lẽ bên bục giảng – nơi gieo mầm cho biết bao ước mơ tuổi học trò cất cánh.",
+                author: "Tập thể lớp 11H",
+                readTime: "4 phút đọc",
+                chapter1: {
+                    label: "Phần I",
+                    heading: "NHỮNG BƯỚC CHÂN BỠ NGỠ NGÀY ĐẦU TIÊN",
+                    paragraphs: [
+                        "Bảng đen, phấn trắng, những trang giáo án đượm màu thời gian – tất cả đã trở thành một phần máu thịt của tuổi học trò, dịu dàng và đầy thương nhớ. Hồi mới bước chân vào cấp học này, chúng tôi chỉ là những đứa trẻ ngượng ngùng, bỡ ngỡ với biết bao lo toan, áp lực tuổi trưởng thành.",
+                        "Chính sự kiên nhẫn của thầy cô đã dắt dìu chúng tôi qua từng ngày tháng. Có những bài toán khó khiến chúng tôi trăn trở, những câu hỏi ngây ngô làm thầy cô bật cười, hay cả những lỗi lầm tuổi áo trắng khiến thầy cô phải phiền lòng... Nhưng sau tất cả, ánh mắt thầy cô chưa bao giờ rời khỏi chúng tôi."
+                    ]
+                },
+                widePhoto: {
+                    caption: "Ảnh minh họa: Ánh nắng sớm mai chiếu rọi lên bục giảng – nơi từng nét phấn trắng lặng thầm mở ra chân trời tri thức cho bao thế hệ học trò.",
+                    credit: "Đồ họa E-Magazine • Chi đoàn 11H",
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 460"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F7F1E5"/><stop offset="100%" stop-color="#EADBC4"/></linearGradient></defs><rect width="1040" height="460" fill="url(#bg1)"/><rect x="70" y="45" width="900" height="330" rx="16" fill="#1E3A2F" stroke="#92400E" stroke-width="10"/><circle cx="840" cy="110" r="85" fill="#FDE68A" opacity="0.22"/><text x="520" y="175" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#FEF3C7" text-anchor="middle">"Người thầy cầm tay, mở ra trí óc và chạm đến trái tim"</text><path d="M260 225 Q520 265 780 225" stroke="#FCD34D" stroke-width="2.5" fill="none" opacity="0.7"/><circle cx="310" cy="295" r="30" fill="#FDE68A"/><path d="M255 375 C255 325 365 325 365 375 Z" fill="#7C2D12"/><line x1="355" y1="315" x2="465" y2="235" stroke="#FEF3C7" stroke-width="4.5" stroke-linecap="round"/><text x="520" y="428" font-family="sans-serif" font-size="14" letter-spacing="4" fill="#7C2D12" font-weight="bold" text-anchor="middle">KÝ ỨC BỤC GIẢNG • MÙA TRI ÂN 20/11</text></svg>`
+                },
+                quote: {
+                    text: "“Đó không chỉ là ánh mắt của sự kỳ vọng, mà còn là bao dung, là tình thương như những người cha, người mẹ thứ hai luôn dõi theo từng bước chân chúng tôi trưởng thành.”",
+                    author: "Trích bút ký tập thể học sinh lớp 11H"
+                },
+                chapter2: {
+                    label: "Phần II",
+                    heading: "NGƯỜI GIEO HẠT MẦM NHÂN ÁI CHO ĐỜI",
+                    paragraphs: [
+                        "Người ta thường bảo nghề giáo là nghề cao quý nhất trong những nghề cao quý, bởi thứ mà thầy cô cho đi không tính bằng vật chất, mà là tương lai của cả một thế hệ. Thầy cô dạy chúng ta cách giải một bài toán khó, cách phân tích một đoạn văn hay, và hơn hết là dạy cách sống tử tế, biết yêu thương và đứng dậy sau vấp ngã.",
+                        "Những đêm khuya khoắt miệt mài bên trang giáo án, những vết phấn trắng vương nhòa trên vai áo – những hi sinh thầm lặng ấy ít khi được kể thành lời, nhưng lặng lẽ hóa thành gốc rễ vững chãi để chúng ta vươn lên thành những cây đời xanh mát.",
+                        "Thời gian trôi đi, rồi ai cũng phải lớn, những chuyến đò chở biết bao thế hệ học sinh cập bến tương lai, để lại trên tóc thầy cô những sợi bạc theo năm tháng. Nhưng dù mai này có đi đến đâu, bay xa đến phương trời nào, những ký ức dưới mái trường này vẫn sẽ mãi là miền ký ức đẹp đẽ nhất."
+                    ]
+                },
+                closing: "Cảm ơn thầy cô – người đã thắp lửa và sưởi ấm những năm tháng thanh xuân rực rỡ nhất của chúng em!"
+            },
+            {
+                id: 1,
+                number: "Kỳ 02",
+                shortTab: "Người Thắp Lửa Mùa Đông",
+                category: "Góc Nhìn Tri Ân • Ánh Đèn Khuya",
+                title: "Người Thắp Lửa Giữa Mùa Đông Tháng Mười Một",
+                sapo: "Giữa những cơn gió heo may se lạnh đầu đông, ngọn lửa nhiệt huyết từ bục giảng và ánh đèn vàng lặng lẽ mỗi đêm khuya của thầy cô chính là hơi ấm nâng đỡ bao thế hệ học trò.",
+                author: "Tập thể lớp 11H",
+                readTime: "4 phút đọc",
+                chapter1: {
+                    label: "Phần I",
+                    heading: "HƠI ẤM TỪ GIỌNG GIẢNG TRẦM ẤM",
+                    paragraphs: [
+                        "Tháng Mười Một gõ cửa bằng những cơn gió se lạnh luồn qua hành lang lớp học. Giữa tiết trời chớm đông ấy, điều sưởi ấm tâm hồn bao thế hệ học trò chính là giọng giảng trầm ấm của thầy, là nụ cười dịu dàng của cô mỗi sáng bước vào lớp.",
+                        "Chúng tôi từng vô tư đi qua những giờ học mà ít khi tự hỏi: để có bốn mươi lăm phút bài giảng sinh động trên lớp, thầy cô đã thức bao nhiêu đêm bên ngọn đèn bàn? Những chồng bài kiểm tra dày cộp được chấm tỉ mỉ đến từng dấu phẩy, những lời phê nắn nót chứa đựng cả sự trăn trở lẫn niềm tự hào khi thấy học trò tiến bộ."
+                    ]
+                },
+                widePhoto: {
+                    caption: "Ảnh minh họa: Ngọn đèn bàn lặng lẽ thức cùng trang giáo án đêm khuya – biểu tượng thầm lặng cho tình yêu nghề và lòng tận tụy vì học trò.",
+                    credit: "Đồ họa E-Magazine • Chi đoàn 11H",
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 460"><rect width="1040" height="460" fill="#1F2923"/><circle cx="520" cy="180" r="220" fill="#FDE68A" opacity="0.16"/><circle cx="520" cy="180" r="130" fill="#FCD34D" opacity="0.24"/><path d="M460 155 L580 155 L555 105 L485 105 Z" fill="#D97706"/><line x1="520" y1="155" x2="520" y2="285" stroke="#B45309" stroke-width="8"/><rect x="465" y="285" width="110" height="14" rx="7" fill="#92400E"/><rect x="330" y="300" width="380" height="45" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="3"/><text x="520" y="398" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#FDE68A" text-anchor="middle">"Ánh đèn khuya thắp sáng những trang giáo án yêu thương"</text></svg>`
+                },
+                quote: {
+                    text: "“Dưới ánh đèn vàng lặng lẽ lúc nửa đêm, từng dòng chữ đỏ trên trang vở học trò chính là nhịp cầu nối yêu thương không lời giữa thầy và trò.”",
+                    author: "Ghi chép từ Chuyên đề Tháng 11"
+                },
+                chapter2: {
+                    label: "Phần II",
+                    heading: "GIẤU NHỮNG NHỌC NHẰN SAU CÁNH CỬA LỚP HỌC",
+                    paragraphs: [
+                        "Có những hôm trời mưa tầm tã, áo thầy cô còn vương hơi lạnh ngoài đường nhưng vừa bước lên bục giảng, nụ cười lại rạng rỡ như nắng ấm ban mai. Thầy cô giấu đi những mệt nhọc đời thường sau cánh cửa lớp học để dành trọn vẹn tâm huyết cho chúng tôi.",
+                        "Ngọn lửa tri thức mà thầy cô thắp lên không ồn ào rực cháy, mà âm thầm lan tỏa, sưởi ấm những trái tim non nớt, giúp chúng tôi đủ bản lĩnh bước qua những mùa đông thử thách của cuộc đời.",
+                        "Tháng Mười Một về, nhìn những chùm hoa nắng khẽ rơi trên sân trường, lòng chúng tôi chợt trào dâng niềm xúc động khôn nguôi khi nghĩ về những người giữ lửa thầm lặng."
+                    ]
+                },
+                closing: "Kính chúc thầy cô luôn giữ mãi ngọn lửa đam mê và sức khỏe dồi dào trên hành trình gieo mầm tri thức!"
+            },
+            {
+                id: 2,
+                number: "Kỳ 03",
+                shortTab: "Những Mùa Hoa Không Tên",
+                category: "Tản Văn Học Đường • Bài Học Làm Người",
+                title: "Những Mùa Hoa Phượng Không Tên",
+                sapo: "Không chỉ trao truyền tri thức sách vở, điều quý giá nhất thầy cô dành tặng chúng tôi chính là những bài học về lòng nhân ái, sự bao dung và cách đứng dậy sau mỗi lần vấp ngã.",
+                author: "Tập thể lớp 11H",
+                readTime: "4 phút đọc",
+                chapter1: {
+                    label: "Phần I",
+                    heading: "NHỮNG BÀI HỌC KHÔNG NẰM TRONG SÁCH GIÁO KHOA",
+                    paragraphs: [
+                        "Sân trường mỗi độ tháng Năm rực đỏ sắc hoa phượng, nhưng trong lòng mỗi học trò, có những “mùa hoa” nở quanh năm suốt tháng – đó là những bài học làm người thầm lặng mà thầy cô đã kiên nhẫn uốn nắn cho chúng tôi từng ngày.",
+                        "Không chỉ có những công thức toán học hay những trang văn chương bay bổng, bài học quý giá nhất chúng tôi nhận được lại đến từ những điều giản dị nhất: cách cúi đầu lễ phép khi gặp người lớn, cách biết nói lời xin lỗi khi mắc sai lầm, và cách dang rộng vòng tay sẻ chia với bạn bè lúc khó khăn."
+                    ]
+                },
+                widePhoto: {
+                    caption: "Ảnh minh họa: Sân trường rợp bóng cây xanh và sắc hoa kỷ niệm – nơi lưu giữ những bài học đầu đời về tình yêu thương và sự tử tế.",
+                    credit: "Đồ họa E-Magazine • Chi đoàn 11H",
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 460"><rect width="1040" height="460" fill="#FDF5EE"/><circle cx="520" cy="175" r="145" fill="#7C2D12" opacity="0.14"/><circle cx="440" cy="155" r="85" fill="#B91C1C" opacity="0.22"/><circle cx="600" cy="165" r="95" fill="#D97706" opacity="0.2"/><rect x="506" y="215" width="28" height="145" rx="6" fill="#7C2D12"/><path d="M220 360 L820 360" stroke="#B45309" stroke-width="5"/><text x="520" y="415" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#7C2D12" text-anchor="middle">"Tri thức giúp ta đi nhanh, nhân cách thầy cô trao giúp ta đi vững vàng"</text></svg>`
+                },
+                quote: {
+                    text: "“Thất bại hôm nay không phải là dấu chấm hết, mà chỉ là một bước đệm để các em trưởng thành và vững vàng hơn vào ngày mai.”",
+                    author: "Lời động viên của Cô chủ nhiệm"
+                },
+                chapter2: {
+                    label: "Phần II",
+                    heading: "ĐIỂM TỰA BAO DUNG NÂNG ĐỠ TUỔI TRẺ",
+                    paragraphs: [
+                        "Tôi vẫn nhớ như in buổi chiều hôm ấy, khi cả lớp chùng xuống vì một kỳ thi không như ý. Thay vì những lời trách móc, cô chỉ lặng lẽ ngồi lại cùng chúng tôi, kể về những lần vấp ngã của chính mình thời trẻ và nhẹ nhàng sẻ chia.",
+                        "Chính sự tin tưởng vô điều kiện ấy đã nâng đỡ chúng tôi đứng dậy, lau khô những giọt nước mắt tiếc nuối và bước tiếp với niềm tin mạnh mẽ hơn bao giờ hết.",
+                        "Mai này rời xa ghế nhà trường, có thể nhiều công thức sẽ phai mờ theo năm tháng, nhưng những bài học về lòng nhân ái và sự tử tế từ thầy cô sẽ mãi là kim chỉ nam theo suốt cuộc đời chúng tôi."
+                    ]
+                },
+                closing: "Tri ân thầy cô – những người nghệ sĩ lặng thầm kiến tạo nên tâm hồn của bao thế hệ học trò!"
+            },
+            {
+                id: 3,
+                number: "Kỳ 04",
+                shortTab: "Chuyến Đò Chiều & Lời Hẹn",
+                category: "Khúc Giao Mùa • Lời Hẹn Mai Sau",
+                title: "Chuyến Đò Chiều Và Lời Hẹn Mai Sau",
+                sapo: "Khi những tờ lịch tháng Mười Một khẽ rơi, mỗi học trò lại càng thấm thía hơn ý nghĩa của hai tiếng “Thầy ơi, Cô ơi!” và lời hẹn ước trở về rạng rỡ trong tương lai.",
+                author: "Tập thể lớp 11H",
+                readTime: "4 phút đọc",
+                chapter1: {
+                    label: "Phần I",
+                    heading: "TIẾNG TRỐNG TRƯỜNG VÀ NHỮNG THÁNG NĂM RỰC RỠ",
+                    paragraphs: [
+                        "Càng trưởng thành dưới mái trường thân yêu, tiếng trống trường dường như cũng ngân vang da diết hơn. Mỗi tờ lịch rơi xuống là một lần chúng tôi nhận ra quãng thời gian được ngồi dưới mái trường này, được nghe tiếng thầy cô giảng bài quý giá biết nhường nào.",
+                        "Nhìn lại chặng đường đã qua, từ những cô cậu học trò rụt rè ngày đầu bỡ ngỡ cho đến khi tự tin vững bước, bóng dáng thầy cô luôn hiện diện ở mọi cột mốc đáng nhớ nhất của thanh xuân chúng tôi."
+                    ]
+                },
+                widePhoto: {
+                    caption: "Ảnh minh họa: Con thuyền tri thức lặng lẽ đưa bao thế hệ học trò cập bến tương lai trong ánh chiều vàng ấm áp.",
+                    credit: "Đồ họa E-Magazine • Chi đoàn 11H",
+                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 460"><rect width="1040" height="460" fill="#F4F7F5"/><circle cx="760" cy="115" r="65" fill="#FCD34D" opacity="0.55"/><path d="M160 315 Q340 285 520 315 T880 315" stroke="#1E3A2F" stroke-width="5" fill="none"/><path d="M370 285 L670 285 L620 330 L420 330 Z" fill="#7C2D12"/><polygon points="520,125 520,275 630,275" fill="#FDE68A" stroke="#B45309" stroke-width="3"/><text x="520" y="405" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#1E3A2F" text-anchor="middle">"Bến đò xưa vẫn ở đó, chở nặng nghĩa tình người lái đò thầm lặng"</text></svg>`
+                },
+                quote: {
+                    text: "“Bến đò xưa vẫn ở đó, người lái đò vẫn miệt mài với những chuyến sang sông mới, chỉ có lũ học trò là mang theo cả bầu trời thương nhớ rời đi.”",
+                    author: "Tản văn mùa tri ân 20/11"
+                },
+                chapter2: {
+                    label: "Phần II",
+                    heading: "LỜI HẸN ƯỚC TRƯỞNG THÀNH NGÀY TRỞ VỀ",
+                    paragraphs: [
+                        "Ví nghề giáo như người chèo đò quả thật chẳng sai bao giờ. Khách sang sông rồi ai cũng tiếp tục hành trình riêng của mình đến những chân trời mới, còn người lái đò vẫn ở lại bến sông quen, lặng lẽ chuẩn bị cho những chuyến đò tiếp theo.",
+                        "Chúng tôi biết, dẫu mai này có đi xa đến đâu, chỉ cần ngoái đầu nhìn lại, mái trường thân yêu và ánh mắt hiền từ của thầy cô vẫn luôn là điểm tựa bình yên nhất để trở về.",
+                        "Hôm nay, nhân ngày Nhà giáo Việt Nam 20/11, chúng em xin phép được nói một lời hẹn ước: sẽ nỗ lực hết mình để trở thành niềm tự hào của thầy cô, của mái trường này."
+                    ]
+                },
+                closing: "Hẹn một ngày trở về rạng rỡ, chúng em lại được cúi đầu thưa hai tiếng: “Thầy ơi, Cô ơi!”"
+            }
+        ];
+
+        // Kho dữ liệu 5 bài Thơ tri ân đặc sắc
+        const POEMS_DATA = [
+            {
+                id: 0,
+                number: "Bài 01",
+                title: "Ơn Thầy Nghĩa Cô",
+                form: "Thơ Lục Bát",
+                author: "Sáng tác: Tập thể lớp 11H",
+                stanzas: [
+                    [
+                        "Bảng đen phấn trắng phất phơ bay,",
+                        "Dắt dìu khát vọng đến tương lai.",
+                        "Năm tháng trôi qua đời lặng lẽ,",
+                        "Ơn thầy nghĩa cô mãi chẳng phai."
+                    ],
+                    [
+                        "Ký ức trường xưa, nắng sân trường,",
+                        "Giọng thầy ấm áp, lời thầy thương.",
+                        "Bảng đen phấn trắng, dệt ước mơ,",
+                        "Nguyện mãi khắc ghi, ơn người thầy."
+                    ]
+                ]
+            },
+            {
+                id: 1,
+                number: "Bài 02",
+                title: "Người Lái Đò Thầm Lặng",
+                form: "Thơ Bốn Chữ",
+                author: "Sáng tác: Tập thể lớp 11H",
+                stanzas: [
+                    [
+                        "Một đời lặng lẽ",
+                        "Chở khách sang sông",
+                        "Gieo hạt ươm mầm",
+                        "Nở hoa tri thức."
+                    ],
+                    [
+                        "Tóc thầy điểm bạc",
+                        "Bụi phấn rơi đầy",
+                        "Chắp cánh bay cao",
+                        "Ước mơ tuổi trẻ."
+                    ]
+                ]
+            },
+            {
+                id: 2,
+                number: "Bài 03",
+                title: "Bụi Phấn Thời Gian",
+                form: "Thơ Thất Ngôn Tứ Tuyệt",
+                author: "Sáng tác: Tập thể lớp 11H",
+                stanzas: [
+                    [
+                        "Lặng lẽ bên trang giáo án khuya,",
+                        "Đèn vàng soi bóng suốt canh khuya.",
+                        "Từng nét chữ nghiêng ươm mầm sống,",
+                        "Nâng bước trò ngoan chẳng quản chia."
+                    ],
+                    [
+                        "Mai này khôn lớn muôn phương trời,",
+                        "Vẫn nhớ lời cô dạy thuở nào.",
+                        "Bụi phấn vương trên tà áo trắng,",
+                        "Hành trang theo mãi suốt đời sau."
+                    ]
+                ]
+            },
+            {
+                id: 3,
+                number: "Bài 04",
+                title: "Gửi Tháng Mười Một Yêu Thương",
+                form: "Thơ Năm Chữ",
+                author: "Sáng tác: Tập thể lớp 11H",
+                stanzas: [
+                    [
+                        "Gió heo may khẽ thổi",
+                        "Tháng Mười Một lại về",
+                        "Nắng vàng trên hàng ghế",
+                        "Nghe lòng thương thầy cô."
+                    ],
+                    [
+                        "Xin gửi ngàn đóa hoa",
+                        "Cùng lời ca chân thật",
+                        "Kính chúc thầy cô mãi",
+                        "Hạnh phúc và bình an."
+                    ]
+                ]
+            },
+            {
+                id: 4,
+                number: "Bài 05",
+                title: "Mùa Thu Năm Ấy Bên Thầy",
+                form: "Thơ Lục Bát",
+                author: "Sáng tác: Tập thể lớp 11H",
+                stanzas: [
+                    [
+                        "Mùa thu năm ấy bước chân vào,",
+                        "Bỡ ngỡ trường xưa nắng xôn xao.",
+                        "Thầy đón chúng em bằng ánh mắt,",
+                        "Dịu dàng ấm áp tựa trăng sao."
+                    ],
+                    [
+                        "Thời gian chớp mắt tựa mây bay,",
+                        "Trang vở lưu tên nghĩa tháng ngày.",
+                        "Dẫu mai rời xa khung cửa lớp,",
+                        "Ân tình bục giảng chẳng lung lay."
+                    ]
+                ]
+            }
+        ];
+
+        let currentEssayIndex = 0;
+        let currentPoemIndex = 0;
+
+        // Render thanh điều hướng chọn 4 kỳ E-Magazine Longform
+        function renderEssayTabs() {
+            const container = document.getElementById("essay-selector");
+            const counter = document.getElementById("essay-counter");
+            if (counter) {
+                counter.textContent = `Kỳ 0${currentEssayIndex + 1} / 0${ESSAYS_DATA.length}`;
+            }
+
+            container.innerHTML = ESSAYS_DATA.map((essay, idx) => {
+                const isActive = idx === currentEssayIndex;
+                return `
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected="${isActive}"
+                        onclick="selectEssay(${idx})"
+                        class="px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium border whitespace-nowrap transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                            isActive
+                                ? "bg-crimson text-amber-50 border-crimson shadow-sm"
+                                : "bg-white text-ink border-bronze/25 hover:border-crimson/50 hover:bg-paper"
+                        }"
+                    >
+                        <span class="font-bold ${isActive ? "text-amber-300" : "text-bronze"}">${essay.number}:</span>
+                        <span>${essay.shortTab}</span>
+                    </button>
+                `;
+            }).join("");
+        }
+
+        // Render bài viết Longform Scrollytelling chuẩn Báo Khánh Hòa (Cột chữ 760px + Sub-heading đồ họa + Ảnh tràn 1040px + Pull-quote)
+        function renderEssayReader(shouldScroll = false) {
+            const essay = ESSAYS_DATA[currentEssayIndex];
+            const reader = document.getElementById("essay-reader");
+
+            const ch1Html = essay.chapter1.paragraphs
+                .map((p, idx) => `<p class="${idx === 0 ? "editorial-dropcap" : ""}">${p}</p>`)
+                .join("");
+
+            const ch2Html = essay.chapter2.paragraphs
+                .map((p) => `<p>${p}</p>`)
+                .join("");
+
+            const encodedWidePhoto = "data:image/svg+xml;utf8," + encodeURIComponent(essay.widePhoto.svg);
+
+            const prevIndex = (currentEssayIndex - 1 + ESSAYS_DATA.length) % ESSAYS_DATA.length;
+            const nextIndex = (currentEssayIndex + 1) % ESSAYS_DATA.length;
+
+            reader.innerHTML = `
+                <div class="reading-fade-in">
+                    <!-- 1. ĐẦU BÀI LONGFORM TRUNG TÂM (MAX-W-760PX) -->
+                    <div class="max-w-[760px] mx-auto mb-10">
+                        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-crimson/20 text-xs uppercase tracking-[0.2em]">
+                            <span class="text-crimson font-bold">${essay.category}</span>
+                            <span class="text-bronze font-semibold">${essay.number} • ${essay.readTime}</span>
+                        </div>
+
+                        <h3 class="font-display text-3xl sm:text-5xl font-extrabold text-ink leading-[1.2] mb-5">
+                            ${essay.title}
+                        </h3>
+
+                        <!-- Sapo bài viết in đậm đặc trưng báo điện tử -->
+                        <p class="font-serifBody font-semibold text-lg sm:text-xl text-crimson/95 leading-[1.8] bg-paperWarm/90 p-5 sm:p-6 rounded-2xl border-l-4 border-crimson">
+                            ${essay.sapo}
+                        </p>
+
+                        <div class="mt-4 flex items-center justify-between text-xs sm:text-sm text-inkMuted">
+                            <span>Tác giả: <strong class="text-ink">${essay.author}</strong></span>
+                            <span class="font-editorial italic text-base text-bronze">Ấn phẩm E-Magazine 20/11</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. CỘT VĂN BẢN CHƯƠNG I (MAX-W-760PX) -->
+                    <div class="max-w-[760px] mx-auto mb-12">
+                        <!-- Đồ họa Sub-heading chương I -->
+                        <div class="emag-chapter-banner rounded-r-2xl p-4 sm:p-5 mb-7 shadow-xs">
+                            <span class="text-[11px] uppercase tracking-[0.25em] text-bronze font-bold block mb-1">
+                                ${essay.chapter1.label}
+                            </span>
+                            <h4 class="font-display text-xl sm:text-2xl font-bold text-crimson tracking-wide">
+                                ${essay.chapter1.heading}
+                            </h4>
+                        </div>
+
+                        <div class="space-y-6 font-serifBody text-ink text-base sm:text-[18px] leading-[1.95] text-justify">
+                            ${ch1Html}
+                        </div>
+                    </div>
+
+                    <!-- 3. ẢNH KHỔ RỘNG TRÀN NGOÀI CỘT CHỮ (WIDE BLEED MAX-W-1040PX) -->
+                    <figure class="max-w-[1040px] mx-auto my-12 bg-white p-3 sm:p-5 rounded-3xl border border-bronze/25 shadow-md">
+                        <div class="overflow-hidden rounded-2xl border border-bronze/15 bg-paperWarm">
+                            <img
+                                src="${encodedWidePhoto}"
+                                alt="${essay.title}"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <figcaption class="mt-3.5 px-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-inkMuted">
+                            <span class="font-serifBody italic text-ink/90">${essay.widePhoto.caption}</span>
+                            <span class="text-[11px] uppercase tracking-wider text-bronze font-semibold shrink-0">${essay.widePhoto.credit}</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- 4. KHỐI TRÍCH DẪN ĐỒ HỌA NỔI BẬT (EDITORIAL PULL-QUOTE BOX) -->
+                    <div class="max-w-[820px] mx-auto my-12">
+                        <blockquote class="relative bg-paperWarm border-y-2 border-crimson/35 px-6 py-8 sm:px-12 sm:py-10 rounded-3xl text-center shadow-xs">
+                            <span class="font-display text-6xl text-crimson/25 leading-none block mb-2">“</span>
+                            <p class="font-editorial italic font-semibold text-2xl sm:text-3xl text-crimson leading-[1.55] mb-4">
+                                ${essay.quote.text}
+                            </p>
+                            <footer class="text-xs sm:text-sm uppercase tracking-[0.2em] text-bronze font-bold">
+                                — ${essay.quote.author} —
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <!-- 5. CỘT VĂN BẢN CHƯƠNG II & LỜI KẾT (MAX-W-760PX) -->
+                    <div class="max-w-[760px] mx-auto">
+                        <!-- Đồ họa Sub-heading chương II -->
+                        <div class="emag-chapter-banner rounded-r-2xl p-4 sm:p-5 mb-7 shadow-xs">
+                            <span class="text-[11px] uppercase tracking-[0.25em] text-bronze font-bold block mb-1">
+                                ${essay.chapter2.label}
+                            </span>
+                            <h4 class="font-display text-xl sm:text-2xl font-bold text-crimson tracking-wide">
+                                ${essay.chapter2.heading}
+                            </h4>
+                        </div>
+
+                        <div class="space-y-6 font-serifBody text-ink text-base sm:text-[18px] leading-[1.95] text-justify">
+                            ${ch2Html}
+                        </div>
+
+                        <!-- Lời kết trang viết -->
+                        <div class="mt-8 p-6 rounded-2xl bg-crimson/5 border border-crimson/20 text-center">
+                            <p class="font-editorial italic font-bold text-xl sm:text-2xl text-crimson leading-relaxed">
+                                ${essay.closing}
+                            </p>
+                        </div>
+
+                        <!-- Thanh điều hướng Kỳ trước / Kỳ tiếp theo ở cuối bài Longform -->
+                        <div class="mt-12 pt-6 border-t border-crimson/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <button
+                                type="button"
+                                onclick="selectEssay(${prevIndex}, true)"
+                                class="w-full sm:w-auto px-5 py-3 rounded-xl border border-bronze/30 bg-white text-sm font-medium text-ink hover:bg-paperWarm hover:border-crimson/40 transition flex items-center justify-center gap-2 cursor-pointer"
+                            >
+                                <span>← Kỳ trước:</span>
+                                <span class="font-display font-bold text-crimson truncate max-w-[180px]">${ESSAYS_DATA[prevIndex].shortTab}</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                onclick="selectEssay(${nextIndex}, true)"
+                                class="w-full sm:w-auto px-5 py-3 rounded-xl bg-crimson text-amber-50 text-sm font-medium hover:bg-crimson/90 transition flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                            >
+                                <span>Kỳ tiếp:</span>
+                                <span class="font-display font-bold truncate max-w-[180px]">${ESSAYS_DATA[nextIndex].shortTab}</span>
+                                <span>→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            if (shouldScroll) {
+                document.getElementById("khu-tan-van").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        function selectEssay(index, shouldScroll = false) {
+            currentEssayIndex = index;
+            renderEssayTabs();
+            renderEssayReader(shouldScroll);
+        }
+
+        // Render các nút chọn 5 bài thơ
+        function renderPoemTabs() {
+            const container = document.getElementById("poem-selector");
+            container.innerHTML = POEMS_DATA.map((poem, idx) => {
+                const isActive = idx === currentPoemIndex;
+                return `
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected="${isActive}"
+                        onclick="selectPoem(${idx})"
+                        class="px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium border transition-all duration-200 cursor-pointer ${
+                            isActive
+                                ? "bg-moss text-amber-50 border-moss shadow-sm"
+                                : "bg-white text-ink border-bronze/25 hover:border-moss/50 hover:bg-paper"
+                        }"
+                    >
+                        <span class="font-bold mr-1 ${isActive ? "text-amber-300" : "text-bronze"}">${poem.number}:</span>
+                        <span>${poem.title}</span>
+                    </button>
+                `;
+            }).join("");
+        }
+
+        // Render khung giấy thư pháp cho bài thơ đang chọn
+        function renderPoemReader() {
+            const poem = POEMS_DATA[currentPoemIndex];
+            const reader = document.getElementById("poem-reader");
+
+            const stanzasHtml = poem.stanzas
+                .map(
+                    (lines) => `
+                    <p class="font-editorial italic text-xl sm:text-2xl md:text-[26px] text-ink leading-[1.95]">
+                        ${lines.join("<br>")}
+                    </p>
+                `
+                )
+                .join('<div class="my-4 text-bronze/40 text-sm">• • •</div>');
+
+            const prevPoem = (currentPoemIndex - 1 + POEMS_DATA.length) % POEMS_DATA.length;
+            const nextPoem = (currentPoemIndex + 1) % POEMS_DATA.length;
+
+            reader.innerHTML = `
+                <div class="reading-fade-in">
+                    <!-- Hoa văn góc trang trí -->
+                    <div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-bronze/40"></div>
+                    <div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-bronze/40"></div>
+                    <div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-bronze/40"></div>
+                    <div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-bronze/40"></div>
+
+                    <span class="font-display text-3xl text-bronze/50 block mb-2">❧</span>
+                    <span class="text-[11px] uppercase tracking-[0.22em] text-moss font-bold block mb-1">
+                        ${poem.number} • ${poem.form}
+                    </span>
+                    <h4 class="font-display text-2xl sm:text-3xl font-bold text-crimson mb-6">
+                        ${poem.title}
+                    </h4>
+
+                    <div class="space-y-4 my-6">
+                        ${stanzasHtml}
+                    </div>
+
+                    <p class="text-xs sm:text-sm uppercase tracking-widest text-inkMuted font-medium mt-6">
+                        — ${poem.author} —
+                    </p>
+
+                    <!-- Điều hướng chuyển bài thơ -->
+                    <div class="mt-8 pt-5 border-t border-bronze/20 flex items-center justify-between text-xs sm:text-sm">
+                        <button
+                            type="button"
+                            onclick="selectPoem(${prevPoem})"
+                            class="px-4 py-2 rounded-lg text-inkMuted hover:text-crimson hover:bg-paperWarm transition font-medium cursor-pointer"
+                        >
+                            ← ${POEMS_DATA[prevPoem].title}
+                        </button>
+                        <span class="text-xs text-bronze font-semibold">
+                            ${currentPoemIndex + 1} / ${POEMS_DATA.length}
+                        </span>
+                        <button
+                            type="button"
+                            onclick="selectPoem(${nextPoem})"
+                            class="px-4 py-2 rounded-lg text-inkMuted hover:text-crimson hover:bg-paperWarm transition font-medium cursor-pointer"
+                        >
+                            ${POEMS_DATA[nextPoem].title} →
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectPoem(index) {
+            currentPoemIndex = index;
+            renderPoemTabs();
+            renderPoemReader();
+        }
+
+        // ==================== DỮ LIỆU & LOGIC BẢN ĐỒ KÝ ỨC 4 CHỦ ĐỀ ====================
+        const MEMORY_MAPS_DATA = [
+            {
+                id: 0,
+                number: "Hành Trình 01",
+                title: "Những Giờ Học Say Sưa",
+                subtitle: "Nơi từng nét phấn trắng mở ra chân trời tri thức bao la",
+                routeCode: "TỌA ĐỘ 20°11'N • BỤC GIẢNG THÂN YÊU",
+                stops: [
+                    {
+                        code: "X1",
+                        time: "Tiết 1 • 07:15 Sáng",
+                        title: "Nét Phấn Đầu Ngày Trên Bảng Xanh",
+                        caption: "Khi nắng sớm vừa chạm khung cửa sổ, từng dòng chữ nắn nót của thầy trên bảng xanh như gieo những hạt mầm tri thức đầu tiên cho một ngày học đầy hứng khởi.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F6F1E7"/><rect x="35" y="28" width="530" height="270" rx="12" fill="#1E3A2F" stroke="#92400E" stroke-width="8"/><text x="300" y="135" font-family="Georgia, serif" font-size="23" font-style="italic" fill="#FEF3C7" text-anchor="middle">"Học để biết, học để làm người"</text><path d="M140 175 Q300 200 460 175" stroke="#FCD34D" stroke-width="2" fill="none" opacity="0.65"/><circle cx="195" cy="245" r="24" fill="#FDE68A"/><path d="M152 335 C152 285 238 285 238 335 Z" fill="#7C2D12"/><line x1="230" y1="265" x2="310" y2="195" stroke="#FEF3C7" stroke-width="3.5" stroke-linecap="round"/></svg>`
+                    },
+                    {
+                        code: "X2",
+                        time: "Tiết 3 • Giờ Văn Học",
+                        title: "Giọng Giảng Trầm Ấm Đưa Lối Tâm Hồn",
+                        caption: "Cả lớp lặng im lắng nghe cô phân tích từng vần thơ. Những trang văn khô khan bỗng hóa thành dòng sông cảm xúc chảy mãi trong ký ức tuổi học trò.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FDF6EC"/><circle cx="480" cy="80" r="55" fill="#FDE68A" opacity="0.65"/><rect x="165" y="115" width="270" height="175" rx="12" fill="#FFFBEB" stroke="#B45309" stroke-width="3"/><path d="M300 135 L300 270" stroke="#7C2D12" stroke-width="2.5"/><path d="M190 165 Q245 150 295 165 M305 165 Q355 150 410 165" stroke="#1E3A2F" stroke-width="2.5" fill="none"/><path d="M190 205 Q245 190 295 205 M305 205 Q355 190 410 205" stroke="#1E3A2F" stroke-width="2.5" fill="none"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-style="italic" text-anchor="middle">Trang sách mở dưới nắng thu</text></svg>`
+                    },
+                    {
+                        code: "X3",
+                        time: "Tiết 4 • Giờ Thực Hành",
+                        title: "Những Cánh Tay Xung Phong Rộn Ràng",
+                        caption: "Ánh mắt khích lệ và cái gật đầu hiền hậu của thầy mỗi khi chúng em tìm ra lời giải đúng đã tiếp thêm sự tự tin cho cả tập thể lớp.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F2F7F4"/><circle cx="210" cy="175" r="32" fill="#1E3A2F"/><path d="M160 285 C160 220 260 220 260 285 Z" fill="#2D5243"/><circle cx="390" cy="175" r="32" fill="#7C2D12"/><path d="M340 285 C340 220 440 220 440 285 Z" fill="#9A3412"/><path d="M250 140 L285 95" stroke="#D97706" stroke-width="6" stroke-linecap="round"/><path d="M430 140 L465 95" stroke="#D97706" stroke-width="6" stroke-linecap="round"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#1E3A2F" font-weight="bold" text-anchor="middle">Nhiệt huyết tuổi học trò</text></svg>`
+                    },
+                    {
+                        code: "X4",
+                        time: "Tan Trường • 11:30 Trưa",
+                        title: "Nán Lại Bục Giảng Sau Tiếng Trống Tan Trường",
+                        caption: "Dù đã hết giờ học, thầy cô vẫn kiên nhẫn ở lại giải đáp từng thắc mắc nhỏ, tỉ mỉ chỉ bảo từng nét chữ cho những bạn chưa kịp hiểu bài.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FEF7EC"/><rect x="110" y="210" width="380" height="22" rx="6" fill="#92400E"/><circle cx="235" cy="145" r="28" fill="#7C2D12"/><path d="M190 210 C190 175 280 175 280 210 Z" fill="#9A3412"/><circle cx="365" cy="155" r="24" fill="#1E3A2F"/><path d="M325 210 C325 180 405 180 405 210 Z" fill="#2D5243"/><text x="300" y="305" font-family="Georgia, serif" font-size="21" fill="#7C2D12" font-style="italic" text-anchor="middle">Tận tụy từng phút giây bên trò</text></svg>`
+                    }
+                ]
+            },
+            {
+                id: 1,
+                number: "Hành Trình 02",
+                title: "Hoạt Động Ngoại Khóa & Phong Trào",
+                subtitle: "Những chuyến đi xa và sắc màu tuổi trẻ rực rỡ bên thầy cô",
+                routeCode: "TỌA ĐỘ 11°H'E • HÀNH TRÌNH TRẢI NGHIỆM",
+                stops: [
+                    {
+                        code: "X1",
+                        time: "Hội Trại Truyền Thống",
+                        title: "Cùng Thầy Cô Dựng Trại Thanh Niên",
+                        caption: "Không còn khoảng cách bục giảng, thầy cô xắn tay áo cùng chúng em buộc từng nút dây, dựng cổng trại dưới ánh nắng rực rỡ đầy tiếng cười.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F4F8F2"/><polygon points="300,75 130,275 470,275" fill="#FEF3C7" stroke="#B45309" stroke-width="5"/><polygon points="300,75 245,275 355,275" fill="#7C2D12"/><line x1="300" y1="45" x2="300" y2="75" stroke="#7C2D12" stroke-width="4"/><polygon points="300,45 345,58 300,70" fill="#D97706"/><text x="300" y="332" font-family="Georgia, serif" font-size="20" fill="#1E3A2F" font-weight="bold" text-anchor="middle">Sức trẻ hội trại 26/3</text></svg>`
+                    },
+                    {
+                        code: "X2",
+                        time: "Hội Diễn Văn Nghệ 20/11",
+                        title: "Những Đêm Tập Luyện Hăng Say Sau Giờ Học",
+                        caption: "Cô chủ nhiệm luôn đứng dưới cánh gà cổ vũ, chỉnh sửa từng tà áo dài và tiếp thêm tự tin để tiết mục của lớp tỏa sáng trên sân khấu.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FDF3F0"/><path d="M80 70 Q300 130 520 70" stroke="#7C2D12" stroke-width="6" fill="none"/><circle cx="300" cy="185" r="65" fill="#FDE68A" opacity="0.7"/><circle cx="300" cy="175" r="26" fill="#7C2D12"/><path d="M255 275 C255 215 345 215 345 275 Z" fill="#B45309"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-style="italic" text-anchor="middle">Giai điệu tri ân vang vọng</text></svg>`
+                    },
+                    {
+                        code: "X3",
+                        time: "Hành Trình Về Nguồn",
+                        title: "Bài Học Lịch Sử Giữa Không Gian Thực Tế",
+                        caption: "Chuyến tham quan bảo tàng cùng thầy đã biến những trang sử hào hùng trở nên sống động, khắc sâu niềm tự hào dân tộc trong tim mỗi người.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F7F4EB"/><rect x="130" y="130" width="340" height="145" rx="8" fill="#FFFBEB" stroke="#1E3A2F" stroke-width="4"/><polygon points="110,130 300,65 490,130" fill="#1E3A2F"/><line x1="190" y1="130" x2="190" y2="275" stroke="#B45309" stroke-width="8"/><line x1="300" y1="130" x2="300" y2="275" stroke="#B45309" stroke-width="8"/><line x1="410" y1="130" x2="410" y2="275" stroke="#B45309" stroke-width="8"/><text x="300" y="332" font-family="Georgia, serif" font-size="20" fill="#1E3A2F" font-weight="bold" text-anchor="middle">Chuyến đi thanh xuân đáng nhớ</text></svg>`
+                    },
+                    {
+                        code: "X4",
+                        time: "Hội Thao Học Đường",
+                        title: "Tiếng Hò Reo Cổ Vũ Vang Góc Sân Trường",
+                        caption: "Khoảnh khắc cả thầy và trò cùng vỡ òa trong niềm vui chiến thắng sau trận kéo co nghẹt thở – kỷ niệm đoàn kết không thể nào quên.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FEF8EC"/><circle cx="300" cy="165" r="55" fill="#FDE68A" stroke="#D97706" stroke-width="5"/><polygon points="300,128 311,152 337,155 318,173 323,198 300,185 277,198 282,173 263,155 289,152" fill="#7C2D12"/><path d="M245 255 L355 255 L335 285 L265 285 Z" fill="#B45309"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-weight="bold" text-anchor="middle">Đoàn kết làm nên sức mạnh</text></svg>`
+                    }
+                ]
+            },
+            {
+                id: 2,
+                number: "Hành Trình 03",
+                title: "Góc Sân Trường & Tà Áo Trắng",
+                subtitle: "Những khung hình mộc mạc lưu giữ thanh xuân tinh khôi nhất",
+                routeCode: "TỌA ĐỘ 08°30'S • HÀNG PHƯỢNG VĨ SÂN TRƯỜNG",
+                stops: [
+                    {
+                        code: "X1",
+                        time: "Sáng Thứ Hai Đầu Tuần",
+                        title: "Tà Áo Dài Tinh Khôi Dưới Nắng Sân Trường",
+                        caption: "Buổi chào cờ đầu tuần rạng rỡ với tà áo dài trắng tinh khôi bên cô chủ nhiệm dịu dàng – bức ảnh cả lớp luôn trân trọng đặt ở trang đầu sổ lưu niệm.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FDF8F2"/><circle cx="485" cy="75" r="50" fill="#FCD34D" opacity="0.45"/><circle cx="300" cy="140" r="28" fill="#7C2D12"/><path d="M255 290 L272 175 L328 175 L345 290 Z" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/><text x="300" y="338" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-style="italic" text-anchor="middle">Nắng sớm sân trường thân yêu</text></svg>`
+                    },
+                    {
+                        code: "X2",
+                        time: "Giờ Ra Chơi Dưới Gốc Bàng",
+                        title: "Cuộc Trò Chuyện Thân Tình Như Người Nhà",
+                        caption: "Dưới tán bàng xanh mát, thầy lắng nghe những tâm sự tuổi mới lớn của chúng em bằng sự bao dung và những lời khuyên ấm áp như người cha thứ hai.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F2F7F3"/><circle cx="300" cy="135" r="95" fill="#1E3A2F" opacity="0.88"/><rect x="288" y="195" width="24" height="90" fill="#7C2D12"/><path d="M150 285 L450 285" stroke="#B45309" stroke-width="5"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#1E3A2F" font-weight="bold" text-anchor="middle">Bóng mát tình thầy trò</text></svg>`
+                    },
+                    {
+                        code: "X3",
+                        time: "Hành Lang Lớp Học Tầng 2",
+                        title: "Ánh Nhìn Hiền Từ Qua Khung Cửa Sổ",
+                        caption: "Góc hành lang quen thuộc nơi mỗi buổi chiều tan học, chúng em vẫn ngoái nhìn bóng dáng cô đứng lặng lẽ dõi theo từng bước chân học trò ra về.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F9F4E8"/><rect x="175" y="65" width="250" height="215" rx="10" fill="#FFFBEB" stroke="#92400E" stroke-width="6"/><line x1="300" y1="65" x2="300" y2="280" stroke="#92400E" stroke-width="4"/><line x1="175" y1="172" x2="425" y2="172" stroke="#92400E" stroke-width="4"/><circle cx="365" cy="115" r="24" fill="#F59E0B" opacity="0.65"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-style="italic" text-anchor="middle">Khung cửa sổ lưu giữ thanh xuân</text></svg>`
+                    },
+                    {
+                        code: "X4",
+                        time: "Mùa Phượng Chớm Nở",
+                        title: "Bức Ảnh Tập Thể Đầy Đủ Thành Viên Nhất",
+                        caption: "Bốn mươi lăm trái tim cùng chung một nhịp đập bên thầy cô chủ nhiệm – gia đình thứ hai đã che chở và nuôi dưỡng ước mơ dưới mái trường mến yêu.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FEF6EE"/><circle cx="300" cy="165" r="28" fill="#7C2D12"/><path d="M258 265 C258 210 342 210 342 265 Z" fill="#9A3412"/><circle cx="205" cy="180" r="22" fill="#1E3A2F"/><path d="M172 265 C172 220 238 220 238 265 Z" fill="#2D5243"/><circle cx="395" cy="180" r="22" fill="#1E3A2F"/><path d="M362 265 C362 220 428 220 428 265 Z" fill="#2D5243"/><text x="300" y="332" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-weight="bold" text-anchor="middle">Đại gia đình Chi đoàn 11H</text></svg>`
+                    }
+                ]
+            },
+            {
+                id: 3,
+                number: "Hành Trình 04",
+                title: "Khoảnh Khắc Tri Ân & Trưởng Thành",
+                subtitle: "Lời cảm ơn chân thành gửi đến người lái đò thầm lặng",
+                routeCode: "TỌA ĐỘ 20°11'2026 • MÙA TRI ÂN SÂU LẮNG",
+                stops: [
+                    {
+                        code: "X1",
+                        time: "Sáng 20/11 Rạng Rỡ",
+                        title: "Bó Hoa Tươi Thắm Dâng Lên Bục Giảng",
+                        caption: "Những đóa hoa hướng dương rực rỡ được cả lớp tự tay gói ghém từ sáng sớm, thay cho lời chúc sức khỏe và niềm hạnh phúc gửi tới thầy cô.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FDF7EE"/><circle cx="300" cy="155" r="52" fill="#F59E0B"/><circle cx="300" cy="155" r="24" fill="#7C2D12"/><path d="M265 205 L300 295 L335 205 Z" fill="#1E3A2F"/><text x="300" y="340" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-style="italic" text-anchor="middle">Đóa hoa tri ân rực rỡ sắc vàng</text></svg>`
+                    },
+                    {
+                        code: "X2",
+                        time: "Những Lá Thư Tay Xúc Động",
+                        title: "Từng Dòng Chữ Nắn Nót Chứa Chan Tình Cảm",
+                        caption: "Mỗi thành viên trong lớp đều viết riêng một tấm thiệp nhỏ. Nụ cười rạng rỡ xen lẫn ánh mắt rưng rưng của cô khi đọc thư khiến cả lớp vỡ òa xúc động.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FAF4E8"/><rect x="155" y="105" width="290" height="175" rx="12" fill="#FFFBEB" stroke="#B45309" stroke-width="3.5"/><polyline points="155,112 300,205 445,112" fill="none" stroke="#7C2D12" stroke-width="3.5"/><circle cx="300" cy="205" r="14" fill="#7C2D12"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-weight="bold" text-anchor="middle">Tâm thư gửi người thầy kính yêu</text></svg>`
+                    },
+                    {
+                        code: "X3",
+                        time: "Lời Dặn Dò Trước Ngưỡng Cửa Tương Lai",
+                        title: "Hành Trang Vững Vàng Mang Theo Suốt Đời",
+                        caption: "“Dù đi bất cứ nơi đâu, hãy luôn sống tử tế và giữ trái tim ấm áp” – lời dặn của thầy chính là ngọn hải đăng soi sáng chặng đường trưởng thành của chúng em.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F2F6F4"/><path d="M120 275 Q300 185 480 275" stroke="#1E3A2F" stroke-width="5" fill="none"/><polygon points="300,80 282,140 318,140" fill="#D97706"/><rect x="285" y="140" width="30" height="95" fill="#7C2D12"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#1E3A2F" font-style="italic" text-anchor="middle">Ngọn hải đăng soi sáng tương lai</text></svg>`
+                    },
+                    {
+                        code: "X4",
+                        time: "Lời Hẹn Ngày Trở Về",
+                        title: "Mãi Tự Hào Là Học Trò Của Thầy Cô",
+                        caption: "Chuyến đò nào rồi cũng cập bến, nhưng ân tình người lái đò sẽ còn mãi. Chúng em hẹn một ngày trưởng thành rạng rỡ sẽ quay về thăm lại mái trường xưa.",
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#FEF7EC"/><path d="M110 250 Q205 232 300 250 T490 250" stroke="#1E3A2F" stroke-width="4" fill="none"/><path d="M215 230 L385 230 L355 262 L245 262 Z" fill="#7C2D12"/><polygon points="300,115 300,225 365,225" fill="#FDE68A" stroke="#B45309" stroke-width="2.5"/><text x="300" y="335" font-family="Georgia, serif" font-size="20" fill="#7C2D12" font-weight="bold" text-anchor="middle">Bến bờ tri ân vẹn nguyên nỗi nhớ</text></svg>`
+                    }
+                ]
+            }
+        ];
+
+        let currentMapIndex = 0;
+
+        // Render thanh chọn 4 chủ đề bản đồ ký ức
+        function renderMapTopicTabs() {
+            const container = document.getElementById("map-topic-selector");
+            container.innerHTML = MEMORY_MAPS_DATA.map((mapItem, idx) => {
+                const isActive = idx === currentMapIndex;
+                return `
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected="${isActive}"
+                        onclick="selectMemoryMap(${idx})"
+                        class="text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between ${
+                            isActive
+                                ? "bg-moss text-amber-50 border-moss shadow-md"
+                                : "bg-white text-ink border-bronze/25 hover:border-moss/50 hover:bg-paperWarm/70"
+                        }"
+                    >
+                        <span class="text-[11px] font-bold uppercase tracking-widest mb-1 block ${
+                            isActive ? "text-amber-300" : "text-bronze"
+                        }">
+                            ${mapItem.number}
+                        </span>
+                        <span class="font-display font-bold text-sm sm:text-base leading-snug ${
+                            isActive ? "text-white" : "text-ink"
+                        }">
+                            ${mapItem.title}
+                        </span>
+                    </button>
+                `;
+            }).join("");
+        }
+
+        // Render Bản đồ Ký ức với con đường nét đứt vòng vèo và các dấu X cột mốc kỷ niệm
+        function renderMemoryMap() {
+            const mapData = MEMORY_MAPS_DATA[currentMapIndex];
+            const viewport = document.getElementById("memory-map-viewport");
+
+            const stopsHtml = mapData.stops.map((stop, idx) => {
+                const isEven = idx % 2 === 1;
+                const encodedSvg = "data:image/svg+xml;utf8," + encodeURIComponent(stop.svg);
+
+                return `
+                    <div class="relative z-10 flex flex-col md:flex-row ${
+                        isEven ? "md:flex-row-reverse" : ""
+                    } items-center gap-6 md:gap-10">
+                        <!-- Cột mốc Dấu X kho báu trên con đường nét đứt -->
+                        <div class="w-full md:w-1/2 flex items-center ${
+                            isEven ? "justify-end md:justify-start" : "justify-start md:justify-end"
+                        } px-2 sm:px-6">
+                            <div class="flex items-center gap-3 bg-paper/95 border-2 border-crimson/30 px-4 py-2.5 rounded-2xl shadow-sm">
+                                <div class="x-marker-badge w-11 h-11 rounded-full bg-crimson text-amber-50 flex items-center justify-center font-display font-extrabold text-xl border-2 border-amber-200 shrink-0">
+                                    ✕
+                                </div>
+                                <div>
+                                    <span class="text-[11px] uppercase tracking-widest text-bronze font-bold block">
+                                        Điểm Dừng ${stop.code}
+                                    </span>
+                                    <span class="font-editorial italic text-base sm:text-lg text-ink font-semibold">
+                                        ${stop.time}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Khung Ảnh Polaroid Cổ Điển & Ghi Chú Kỷ Niệm -->
+                        <div class="w-full md:w-1/2">
+                            <figure class="bg-white p-4 sm:p-5 rounded-2xl border border-bronze/30 shadow-md hover:shadow-lg transition-shadow duration-300 transform ${
+                                isEven ? "md:rotate-[0.8deg]" : "md:-rotate-[0.8deg]"
+                            } hover:rotate-0">
+                                <div class="relative aspect-[16/10] rounded-xl overflow-hidden bg-paperWarm mb-4 border border-bronze/15">
+                                    <img
+                                        src="${encodedSvg}"
+                                        alt="${stop.title}"
+                                        class="w-full h-full object-cover ken-burns-frame"
+                                        style="animation-delay: -${idx * 4}s;"
+                                    >
+                                    <div class="sunbeam-overlay absolute inset-0 w-1/2 h-full" style="animation-delay: ${idx * 1.5}s;"></div>
+                                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-crimson/90 text-amber-50 text-[11px] font-bold tracking-wider uppercase shadow">
+                                        Mốc ${stop.code}
+                                    </span>
+                                </div>
+                                <figcaption class="px-1">
+                                    <h4 class="font-display text-lg sm:text-xl font-bold text-crimson leading-snug mb-1.5">
+                                        ${stop.title}
+                                    </h4>
+                                    <p class="text-sm text-inkMuted leading-relaxed text-justify">
+                                        ${stop.caption}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            viewport.innerHTML = `
+                <div class="reading-fade-in">
+                    <!-- Đầu trang Bản đồ cổ điển -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-10 border-b border-bronze/25">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-[0.22em] text-bronze font-bold block mb-1">
+                                ${mapData.routeCode}
+                            </span>
+                            <h3 class="font-display text-2xl sm:text-3xl font-bold text-crimson">
+                                ${mapData.title}
+                            </h3>
+                            <p class="font-editorial italic text-base sm:text-lg text-inkMuted mt-0.5">
+                                ${mapData.subtitle}
+                            </p>
+                        </div>
+                        <div class="inline-flex items-center gap-2 self-start sm:self-center px-3.5 py-2 rounded-full bg-paper border border-bronze/30 text-xs font-semibold text-moss shrink-0">
+                            <span class="text-crimson font-extrabold text-sm">✕</span>
+                            <span>4 Cột Mốc Kỷ Niệm</span>
+                        </div>
+                    </div>
+
+                    <!-- Không gian Con Đường Nét Đứt Vòng Vèo Uốn Lượn -->
+                    <div class="relative py-2">
+                        <!-- Đường nét đứt uốn lượn cho màn hình Desktop (md trở lên) -->
+                        <svg
+                            class="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
+                            viewBox="0 0 800 1200"
+                            preserveAspectRatio="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M 380 40 C 560 180, 560 320, 400 440 C 240 560, 240 700, 400 820 C 560 940, 520 1060, 390 1160"
+                                fill="none"
+                                stroke="#7C2D12"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-dasharray="12 12"
+                                opacity="0.45"
+                                class="map-dashed-path"
+                            />
+                        </svg>
+
+                        <!-- Đường nét đứt uốn lượn dọc xen kẽ trái - phải cho màn hình Mobile -->
+                        <svg
+                            class="block md:hidden absolute inset-0 w-full h-full pointer-events-none"
+                            viewBox="0 0 360 1600"
+                            preserveAspectRatio="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M 65 30 C 310 180, 310 340, 290 450 C 260 580, 50 700, 70 850 C 90 1000, 310 1120, 290 1260 C 270 1390, 120 1480, 180 1560"
+                                fill="none"
+                                stroke="#7C2D12"
+                                stroke-width="3.5"
+                                stroke-linecap="round"
+                                stroke-dasharray="10 10"
+                                opacity="0.45"
+                                class="map-dashed-path"
+                            />
+                        </svg>
+
+                        <!-- Danh sách 4 trạm dừng dấu X & khung ảnh -->
+                        <div class="space-y-12 md:space-y-16">
+                            ${stopsHtml}
+                        </div>
+                    </div>
+
+                    <!-- Điểm kết thúc hành trình trên bản đồ -->
+                    <div class="mt-12 pt-6 border-t border-bronze/25 text-center">
+                        <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-crimson/10 text-crimson font-editorial italic text-lg font-semibold">
+                            <span>✦</span>
+                            <span>Hành trình ký ức vẫn tiếp nối trong trái tim mỗi người học trò</span>
+                            <span>✦</span>
+                        </span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectMemoryMap(index) {
+            currentMapIndex = index;
+            renderMapTopicTabs();
+            renderMemoryMap();
+        }
+
+        // Khởi tạo giao diện đọc ngay khi tải trang
+        document.addEventListener("DOMContentLoaded", () => {
+            renderEssayTabs();
+            renderEssayReader(false);
+            renderPoemTabs();
+            renderPoemReader();
+            renderMapTopicTabs();
+            renderMemoryMap();
+        });
+    </script>
+
+</body>
+</html>
