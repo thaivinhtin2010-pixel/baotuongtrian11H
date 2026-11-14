@@ -918,7 +918,9 @@
                 .map((p) => `<p>${p}</p>`)
                 .join("");
 
-            const encodedWidePhoto = "data:image/svg+xml;utf8," + encodeURIComponent(essay.widePhoto.svg);
+            const encodedWidePhoto = essay.widePhoto.img
+                ? essay.widePhoto.img
+                : "data:image/svg+xml;utf8," + encodeURIComponent(essay.widePhoto.svg);
 
             const prevIndex = (currentEssayIndex - 1 + ESSAYS_DATA.length) % ESSAYS_DATA.length;
             const nextIndex = (currentEssayIndex + 1) % ESSAYS_DATA.length;
@@ -1161,7 +1163,7 @@
                         time: "Tiết 1 • 07:15 Sáng",
                         title: "Nét Phấn Đầu Ngày Trên Bảng Xanh",
                         caption: "Khi nắng sớm vừa chạm khung cửa sổ, từng dòng chữ nắn nót của thầy trên bảng xanh như gieo những hạt mầm tri thức đầu tiên cho một ngày học đầy hứng khởi.",
-                        img: 'anh1.jpg'
+                        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380"><rect width="600" height="380" fill="#F6F1E7"/><rect x="35" y="28" width="530" height="270" rx="12" fill="#1E3A2F" stroke="#92400E" stroke-width="8"/><text x="300" y="135" font-family="Georgia, serif" font-size="23" font-style="italic" fill="#FEF3C7" text-anchor="middle">"Học để biết, học để làm người"</text><path d="M140 175 Q300 200 460 175" stroke="#FCD34D" stroke-width="2" fill="none" opacity="0.65"/><circle cx="195" cy="245" r="24" fill="#FDE68A"/><path d="M152 335 C152 285 238 285 238 335 Z" fill="#7C2D12"/><line x1="230" y1="265" x2="310" y2="195" stroke="#FEF3C7" stroke-width="3.5" stroke-linecap="round"/></svg>`
                     },
                     {
                         code: "X2",
@@ -1340,7 +1342,9 @@
 
             const stopsHtml = mapData.stops.map((stop, idx) => {
                 const isEven = idx % 2 === 1;
-                const encodedSvg = "data:image/svg+xml;utf8," + encodeURIComponent(stop.svg);
+                const mediaSrc = stop.img
+                    ? stop.img
+                    : (stop.svg ? "data:image/svg+xml;utf8," + encodeURIComponent(stop.svg) : "");
 
                 return `
                     <div class="relative z-10 flex flex-col md:flex-row ${
@@ -1372,7 +1376,7 @@
                             } hover:rotate-0">
                                 <div class="relative aspect-[16/10] rounded-xl overflow-hidden bg-paperWarm mb-4 border border-bronze/15">
                                     <img
-                                        src="${encodedSvg}"
+                                        src="${mediaSrc}"
                                         alt="${stop.title}"
                                         class="w-full h-full object-cover ken-burns-frame"
                                         style="animation-delay: -${idx * 4}s;"
